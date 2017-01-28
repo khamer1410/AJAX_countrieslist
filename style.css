@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Lat|Open+Sans|Rock+Salt");
+
+body {
+  margin: 0;
+  font-family: "Open Sans";
+  background:url('https://images.unsplash.com/photo-1482059470115-0aadd6bf6834');
+  background-size: cover;
+
+}
+
+* {
+	/*border: 1px solid blue;*/
+}
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  min-height: 100vh;
+
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  box-shadow: 8px 4px 18px azure;
+}
+
+li {
+	list-style: none;
+}
