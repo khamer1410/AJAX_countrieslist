@@ -21,7 +21,8 @@ function searchCountries() {
 	$.ajax({
 		url: url + countryName,
 		method: 'GET',
-		success: showCountriesList		//czy nie powinno być funkcja()?
+		success: showCountriesList,
+		error: failInfo
 	});
 }
 
@@ -29,19 +30,30 @@ function showCountriesList(resp) {
 	console.log(resp);
 	countriesList.empty();
 	resp.forEach(function(item) {
+
+		var container = $('<div>');
+		$(container).addClass('container-result');
+
 		$('<h2>')
+		.addClass('heading')
 		.text(item.name)
-		.appendTo(countriesList);
+		.appendTo(container);
 		
 		$('<ul>')
 		.append($('<li>').text("Capital: " + item.capital))
 		.append($('<li>').text("Region: " + item.region))
 		.append($('<li>').text("Population: " + item.population))
-		.appendTo(countriesList)
+		.appendTo(container)
 		.hide();
 
-		$('<h2>').click(function(){
-			$('<ul>').slideToggle();
+		container
+		.appendTo(countriesList)
+		.click(function() {
+			$(this).find('ul').slideToggle();
 		});
 	});
+}
+
+function failInfo() {
+	$('#countries').find('li').text('No data avaliable - check your typing').css('color', 'red');
 }

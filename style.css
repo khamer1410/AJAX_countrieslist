@@ -1,21 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Lat|Open+Sans|Rock+Salt");
+@import url('https://fonts.googleapis.com/css?family=Sansita');
 
 body {
   margin: 0;
-  font-family: "Open Sans";
+  font-family: "Sansita";
   background:url('https://images.unsplash.com/photo-1482059470115-0aadd6bf6834');
   background-size: cover;
-
 }
 
-* {
-	/*border: 1px solid blue;*/
-}
 .container {
   width: 100%;
   max-width: 900px;
   margin: 20px auto;
-  min-height: 100vh;
+  min-height: 90vh;
 
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
@@ -23,6 +20,49 @@ body {
   box-shadow: 8px 4px 18px azure;
 }
 
+input {
+  padding: 5px 30px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  text-align: center;
+  outline: none;
+}
+
+button {
+    padding: 15px 50px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    background-color: floralwhite;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+
+/*RESULTS*/
 li {
 	list-style: none;
+  padding: 5px;
+}
+.container-result {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  position: relative;
+}
+
+.heading {
+  background-color: #3498db;
+  color: #2c3e50;
+  padding: 8px;
+}
+
+.heading::after {
+  content: 'details';
+  position: absolute;
+  right: 0;
+  padding-right: 5%;
+  color: white;
+  font-size: 0.6em;
+  line-height: 30px;
+  cursor: pointer;
 }
